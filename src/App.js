@@ -15,7 +15,7 @@ function App() {
       // than dropping them off on the home page.
       return (
         <Navigate
-          to="/simulation-frontend/"
+          to="/simulation-frontend"
           state={{ from: location }}
           replace
         />
@@ -30,7 +30,7 @@ function App() {
         Asset Tracking Project Simuation
       </h1>
       <Routes>
-        <Route path="/simulation-frontend/" element={<Login />} />
+        <Route path="/simulation-frontend" element={<Login />} />
         <Route
           path="/view"
           element={
