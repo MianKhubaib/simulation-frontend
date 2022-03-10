@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/container-tracking-frontend/static/css/main.78849dac.css",
+    "main.js": "/container-tracking-frontend/static/js/main.680c8f89.js",
+    "static/js/787.2ed01b9d.chunk.js": "/container-tracking-frontend/static/js/787.2ed01b9d.chunk.js",
+    "index.html": "/container-tracking-frontend/index.html",
+    "main.78849dac.css.map": "/container-tracking-frontend/static/css/main.78849dac.css.map",
+    "main.680c8f89.js.map": "/container-tracking-frontend/static/js/main.680c8f89.js.map",
+    "787.2ed01b9d.chunk.js.map": "/container-tracking-frontend/static/js/787.2ed01b9d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.78849dac.css",
+    "static/js/main.680c8f89.js"
+  ]
+}
