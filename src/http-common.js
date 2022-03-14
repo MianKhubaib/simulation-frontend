@@ -10,8 +10,8 @@ const http = axios.create({
 });
 
 const localHttp = axios.create({
-  //baseURL: "https://tranquil-dawn-42923.herokuapp.com/api/",
-  baseURL: "http://localhost:3001/api",
+  baseURL: "https://simulation-backend.herokuapp.com/api/",
+  //baseURL: "http://localhost:3001/api",
   headers: {
     "Content-type": "application/json",
     Authorization: `Bearer ${getToken()}`,
