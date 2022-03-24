@@ -12,7 +12,7 @@ export default function ViewAll() {
     setExecution(false);
     try {
       const res = await localHttp.post(`cancelSimulationAll`);
-      console.log(res.data);
+      console.log("Execution has been cancelled");
       setRefreshDisable(true);
     } catch (e) {
       console.log(e);
@@ -22,15 +22,16 @@ export default function ViewAll() {
   const executeRepeatFunctionAll = async () => {
     setExecution(true);
     setRefreshDisable(true);
-    console.log("here");
     setTimeout(() => {
       setRefreshDisable(false);
     }, 6000);
     try {
+      console.log("Simulation is working")
       await localHttp.post(
         `simulateAll`,
         bleData.filter((item) => item.checked === true)
       );
+    
     } catch (e) {
       console.log(e);
     }
@@ -45,7 +46,6 @@ export default function ViewAll() {
         return item;
       }
     });
-    console.log(updatedCheckedState);
     setData(updatedCheckedState);
   };
 
@@ -56,7 +56,6 @@ export default function ViewAll() {
       }
       return item;
     });
-    console.log(updatedCheckedState);
     setData(updatedCheckedState);
     setAllSelected(true);
   };
@@ -68,19 +67,17 @@ export default function ViewAll() {
       }
       return item;
     });
-    console.log(updatedCheckedState);
     setData(updatedCheckedState);
     setAllSelected(false);
   };
 
   const getAll = async () => {
     try {
-      const res = await http.get("/sensor/all");
+      const token=localStorage.getItem("access_token")
+      const res = await http.get("/sensor/all",{ headers: {"Authorization" : `Bearer ${token}`} });
       const modifiedData = res.data.map((item) => {
         return { ...item, checked: false };
       });
-      console.log(modifiedData);
-
       setData(modifiedData);
     } catch (e) {
       console.log(e);

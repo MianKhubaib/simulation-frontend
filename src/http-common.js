@@ -4,8 +4,8 @@ import { getToken } from "./util";
 const http = axios.create({
   baseURL: "https://at-backend1.herokuapp.com/",
   headers: {
-    "Content-type": "application/json",
-    Authorization: `Bearer ${getToken()}`,
+    'Authorization': `Bearer ${getToken()}`,
+    'Content-Type': 'application/json'
   },
 });
 
