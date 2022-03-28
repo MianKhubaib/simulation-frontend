@@ -26,12 +26,16 @@ export default function ViewAll() {
       setRefreshDisable(false);
     }, 6000);
     try {
-      console.log("Simulation is working")
+      console.log("Simulation is working");
       await localHttp.post(
         `simulateAll`,
-        bleData.filter((item) => item.checked === true)
+        bleData.filter((item) => item.checked === true),
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("access_token")}`,
+          },
+        }
       );
-    
     } catch (e) {
       console.log(e);
     }
@@ -73,8 +77,10 @@ export default function ViewAll() {
 
   const getAll = async () => {
     try {
-      const token=localStorage.getItem("access_token")
-      const res = await http.get("/sensor/all",{ headers: {"Authorization" : `Bearer ${token}`} });
+      const token = localStorage.getItem("access_token");
+      const res = await http.get("/sensor/all", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
       const modifiedData = res.data.map((item) => {
         return { ...item, checked: false };
       });

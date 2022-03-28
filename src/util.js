@@ -1,24 +1,24 @@
-import jwt_decode from 'jwt-decode'
-
+import jwt_decode from "jwt-decode";
 
 // JWT exp is in seconds
 const isExpired = () => {
-    let token = localStorage.getItem("access_token");
-    if(!token) return true
-    let decodedToken = jwt_decode(token);
-    let currentDate = new Date();
-    if (decodedToken.exp * 1000 < currentDate.getTime()) {
-        // console.log("Token expired.");
-        return true
-      } else {
-        // console.log("Valid token");   
-        return false
-      }
-}
+  let token = localStorage.getItem("access_token");
+  if (!token) return true;
+  let decodedToken = jwt_decode(token);
+  let currentDate = new Date();
+  if (decodedToken.exp * 1000 < currentDate.getTime()) {
+    // console.log("Token expired.");
+    return true;
+  } else {
+    // console.log("Valid token");
+    return false;
+  }
+};
 
 const getToken = () => {
-    return localStorage.getItem("access_token");
-}
+  const token = localStorage.getItem("access_token");
+  console.log("I am in file", token);
+  return token;
+};
 
-
-export { isExpired, getToken}
+export { isExpired, getToken };
