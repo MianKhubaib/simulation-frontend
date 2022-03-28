@@ -20,7 +20,6 @@ export default function ViewAll() {
   };
 
   const executeRepeatFunctionAll = async () => {
-    hangleUnSelectAll();
     setExecution(true);
     setRefreshDisable(true);
     setTimeout(() => {
@@ -32,6 +31,7 @@ export default function ViewAll() {
         `simulateAll`,
         bleData.filter((item) => item.checked === true)
       );
+      hangleUnSelectAll();
     } catch (e) {
       console.log(e);
     }
