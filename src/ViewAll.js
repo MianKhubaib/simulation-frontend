@@ -20,6 +20,7 @@ export default function ViewAll() {
   };
 
   const executeRepeatFunctionAll = async () => {
+    hangleUnSelectAll();
     setExecution(true);
     setRefreshDisable(true);
     setTimeout(() => {
@@ -29,12 +30,7 @@ export default function ViewAll() {
       console.log("Simulation is working");
       await localHttp.post(
         `simulateAll`,
-        bleData.filter((item) => item.checked === true),
-        {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("access_token")}`,
-          },
-        }
+        bleData.filter((item) => item.checked === true)
       );
     } catch (e) {
       console.log(e);

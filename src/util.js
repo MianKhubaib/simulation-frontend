@@ -17,7 +17,6 @@ const isExpired = () => {
 
 const getToken = () => {
   const token = localStorage.getItem("access_token");
-  console.log("I am in file", token);
   return token;
 };
 

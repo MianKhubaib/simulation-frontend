@@ -24,13 +24,8 @@ export default function Login() {
           password,
         }
       );
-      console.log(res.data.access_token);
+
       localStorage.setItem("access_token", res.data.access_token);
-      await timeout(2000); //for 1 sec delay
-      console.log(
-        "Token has been updated",
-        localStorage.getItem("access_token")
-      );
       navigate("/view", { replace: true });
     } catch (error) {
       if (error) {

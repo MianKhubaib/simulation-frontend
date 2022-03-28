@@ -11,11 +11,7 @@ const http = axios.create({
 
 const localHttp = axios.create({
   baseURL: "https://simulation-backend.herokuapp.com/api/",
-  //  baseURL: "http://localhost:3001/api",
-  headers: {
-    "Content-type": "application/json",
-    Authorization: `Bearer ${getToken()}`,
-  },
+  // baseURL: "http://localhost:3001/api",
 });
 
 export { http, localHttp };
